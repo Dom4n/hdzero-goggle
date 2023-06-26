@@ -29,6 +29,7 @@ void self_test() {
         return;
 
     LOGI("==== Self Test ======================");
+    LOGI("==== edit by Dom4n ==================");
     // 1. Read FPGA
     i = I2C_Read(ADDR_FPGA, 0xFF);
     LOGI("%sFPGA ver = %d ", msg[i != 0], i);

@@ -158,15 +158,15 @@ const setting_t g_setting_defaults = {
     },
     .clock = {
         .year = 2023,
-        .month = 3,
-        .day = 28,
+        .month = 6,
+        .day = 26,
         .hour = 12,
         .min = 30,
         .sec = 30,
         .format = 0,
     },
     .wifi = {
-        .enable = false,
+        .enable = true,
         .mode = 0,
         .clientid = {""},
         .ssid = {"HDZero", "MySSID"},
@@ -270,17 +270,17 @@ void settings_reset(void) {
 
 void settings_init(void) {
     // check if backup of old settings file exists after goggle update
-    if (file_exists("/mnt/extsd/setting.ini")) {
-        char buf[256];
-        sprintf(buf, "cp -f /mnt/extsd/setting.ini %s", SETTING_INI);
-        system(buf);
-        usleep(10);
-        system("rm /mnt/extsd/setting.ini");
-    }
+    // if (file_exists("/mnt/extsd/setting.ini")) {
+    //     char buf[256];
+    //     sprintf(buf, "cp -f /mnt/extsd/setting.ini %s", SETTING_INI);
+    //     system(buf);
+    //     usleep(10);
+    //     system("rm /mnt/extsd/setting.ini");
+    // }
 
-    int file_version = ini_getl("settings", "file_version", SETTINGS_INI_VERSION_UNKNOWN, SETTING_INI);
-    if (file_version != SETTING_INI_VERSION)
-        settings_reset();
+    // int file_version = ini_getl("settings", "file_version", SETTINGS_INI_VERSION_UNKNOWN, SETTING_INI);
+    // if (file_version != SETTING_INI_VERSION)
+    settings_reset();
 }
 
 void settings_load(void) {
