@@ -26,9 +26,9 @@ const setting_t g_setting_defaults = {
         .right_speed = 5,
     },
     .autoscan = {
-        .status = SETTING_AUTOSCAN_STATUS_ON,
-        .last_source = SETTING_AUTOSCAN_SOURCE_LAST,
-        .source = SETTING_AUTOSCAN_SOURCE_HDZERO,
+        .status = SETTING_AUTOSCAN_STATUS_OFF,
+        .last_source = SETTING_AUTOSCAN_SOURCE_HDMI_IN,
+        .source = SETTING_AUTOSCAN_SOURCE_HDMI_IN,
     },
     .power = {
         .voltage = 35,
