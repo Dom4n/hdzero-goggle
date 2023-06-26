@@ -270,12 +270,12 @@ void settings_reset(void) {
 
 void settings_init(void) {
     // check if backup of old settings file exists after goggle update
-    if (file_exists("/mnt/UDISK/setting.ini")) {
+    if (file_exists("/mnt/extsd/setting.ini")) {
         char buf[256];
-        sprintf(buf, "cp -f /mnt/UDISK/setting.ini %s", SETTING_INI);
+        sprintf(buf, "cp -f /mnt/extsd/setting.ini %s", SETTING_INI);
         system(buf);
         usleep(10);
-        system("rm /mnt/UDISK/setting.ini");
+        system("rm /mnt/extsd/setting.ini");
     }
 
     int file_version = ini_getl("settings", "file_version", SETTINGS_INI_VERSION_UNKNOWN, SETTING_INI);
