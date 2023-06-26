@@ -178,7 +178,7 @@ const setting_t g_setting_defaults = {
         .dns = "192.168.2.1",
         .rf_channel = 6,
         .root_pw = "divimath",
-        .ssh = false,
+        .ssh = true,
     },
     .storage = {
         .logging = false,
